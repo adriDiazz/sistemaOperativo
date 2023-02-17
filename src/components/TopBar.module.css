@@ -1,0 +1,38 @@
+.topBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    width: 100vw;
+    background-color: #0504045a;
+    font-weight: bold;
+}
+
+.topBar img {
+    width: 30px;
+    height: 30px;
+    padding: 0rem 1rem;
+}
+
+.ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    height: 5vh;
+    width: 100vw;
+    background-color: #0504045a;
+}
+
+.ul li {
+    list-style: none;
+    font-size: 1rem;
+    color: #fff;
+}
+
+
+.date {
+    color: #fff;
+    font-size: 1rem;
+    padding-right: 1rem;
+}

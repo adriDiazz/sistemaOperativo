@@ -1,0 +1,38 @@
+.appItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 10rem;
+    max-height: 20rem;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+
+}
+
+
+.appItem img {
+    width: 3rem;
+    height: 3rem;
+    padding: 1rem;
+}
+
+.appItem p {
+    max-height: 8rem;
+}
+
+.button {
+    padding: 0.3rem 1rem;
+    background-color: #fe9934;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.button:hover {
+    background-color: #e8b37e;
+}
+

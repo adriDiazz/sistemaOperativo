@@ -1,0 +1,14 @@
+.taskBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    width: 100vw;
+    background-color: #fe9934;
+}
+
+.taskBar img {
+    width: 30px;
+    height: 30px;
+    padding: 0rem 1rem;
+}

@@ -1,0 +1,16 @@
+.full {
+    width: 100vw;
+    height: 90vh;
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.icons img {
+    width: 80px;
+    height: 80px;
+}
