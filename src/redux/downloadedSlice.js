@@ -4,7 +4,7 @@ export const downloadedApps = createSlice({
     name: "apps",
     initialState:[{
         name:'Notepad',
-        icon:'bloc.png',
+        icon:'Notepad.png',
         downloaded : false,
     },
     {

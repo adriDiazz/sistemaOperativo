@@ -6,7 +6,6 @@ export const appsOpenedSlice = createSlice({
         mycomputer: false,
         terminal: false,
         store: false,
-        bloc: false
     },
     reducers:{
         openApp : (state, action)=>{

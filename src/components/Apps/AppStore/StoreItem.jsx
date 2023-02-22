@@ -38,7 +38,14 @@ const StoreItem = ({ img, title, desc }) => {
 						Loading...
 					</button>
 				) : (
-					<button className={style.button} onClick={() => getApp(title)}>
+					<button
+						className={style.button}
+						onClick={() => getApp(title)}
+						disabled={
+							downloadedApps.find(apps => apps.name === title).downloaded ===
+							true
+						}
+					>
 						{downloadedApps.find(apps => apps.name === title).downloaded ===
 						true
 							? 'Installed'

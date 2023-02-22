@@ -6,12 +6,16 @@ import AppStore from './Apps/AppStore/AppStore';
 import style from './Desktop.module.css';
 import Mycomputer from './Mycomputer';
 import Terminal from './Terminal';
+import Bloc from './Apps/NotePad/Bloc';
+import Calendario from './Apps/Calendar/Calendar';
+import CalendarApp from './Apps/Calendar/CalendarApp';
 
 const Desktop = () => {
 	const openedApps = useSelector(state => state.appsOpened);
 	const downloadedApps = useSelector(state => state.downloadedApps);
 	const dispatch = useDispatch();
 
+	console.log(downloadedApps);
 	const handleOpen = e => {
 		dispatch(
 			openApp({
@@ -29,7 +33,7 @@ const Desktop = () => {
 					onClick={e => handleOpen(e)}
 				/>
 				<img src='terminal.png' alt='terminal' onClick={e => handleOpen(e)} />
-				<img src='smartphone.png' alt='store' onClick={e => handleOpen(e)} />
+				<img src='store.png' alt='store' onClick={e => handleOpen(e)} />
 				{downloadedApps?.map((app, index) => {
 					if (app.downloaded === true) {
 						return (
@@ -47,6 +51,8 @@ const Desktop = () => {
 			<Terminal open={openedApps.terminal} title='Terminal' />
 			<AppStore open={openedApps.store} title='AppStore' />
 			<Paint open={openedApps.Paint} title='Paint' />
+			<Bloc open={openedApps.Notepad} title='Notepad' />
+			<CalendarApp open={openedApps.Calendar} title='Calendar' />
 		</div>
 	);
 };

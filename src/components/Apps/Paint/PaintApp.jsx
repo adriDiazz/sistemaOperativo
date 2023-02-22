@@ -45,7 +45,7 @@ function CopyPaint() {
 	};
 
 	return (
-		<div className='App'>
+		<div className='App cancel'>
 			<div className='draw-area'>
 				<Menu
 					setLineColor={setLineColor}

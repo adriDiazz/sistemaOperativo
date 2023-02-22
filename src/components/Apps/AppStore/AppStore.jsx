@@ -14,7 +14,7 @@ const AppStore = ({ open, title }) => {
 				app: 'store'
 			})
 		);
-		disaptach(add);
+		// disaptach(add);
 	};
 	return (
 		open && (
@@ -39,7 +39,7 @@ const AppStore = ({ open, title }) => {
 								desc='Paint va donde tu creatividad te lleve, desde bocetos rápidos hasta obras de arte que están totalmente terminadas.'
 							/>
 							<StoreItem
-								img='bloc.png'
+								img='Notepad.png'
 								title='Notepad'
 								desc='Este editor, rápido y sencillo, ha sido una grapa de Windows durante años. Úsalo para ver, editar y buscar en documentos.'
 							/>

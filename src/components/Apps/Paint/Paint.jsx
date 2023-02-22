@@ -24,7 +24,7 @@ const Paint = ({ open, title }) => {
 				}}
 				cancel='.cancel'
 			>
-				<div className={`${style.window} cancel`}>
+				<div className={`${style.window}`}>
 					<div className={`${style.borderTop}`}>
 						<img src='close.png' alt='' onClick={close} />
 						<span className={style.title}>{title}</span>

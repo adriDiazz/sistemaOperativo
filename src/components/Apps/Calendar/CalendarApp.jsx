@@ -1,17 +1,17 @@
 import Draggable from 'react-draggable';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeApp } from '../../../redux/appsSlice';
-import style from './Bloc.module.css';
-import NotePad from './NotePad';
+import Calendario from './Calendar';
+import style from './CalendarApp.module.css';
 
-const Bloc = ({ open, title }) => {
+const CalendarApp = ({ open, title }) => {
 	const apps = useSelector(state => state.appsOpened);
 	const disaptach = useDispatch();
 
 	const close = () => {
 		disaptach(
 			closeApp({
-				app: 'Notepad'
+				app: 'Calendar'
 			})
 		);
 	};
@@ -29,11 +29,11 @@ const Bloc = ({ open, title }) => {
 						<img src='close.png' alt='' onClick={close} />
 						<span className={style.title}>{title}</span>
 					</div>
-					<NotePad />
+					<Calendario />
 				</div>
 			</Draggable>
 		)
 	);
 };
 
-export default Bloc;
+export default CalendarApp;

@@ -12,3 +12,9 @@
     height: 30px;
     padding: 0rem 1rem;
 }
+
+.apps {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
