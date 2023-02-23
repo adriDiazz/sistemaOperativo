@@ -9,16 +9,49 @@ export const appsOpenedSlice = createSlice({
     },
     reducers:{
         openApp : (state, action)=>{
-            const app = action.payload.app;
-            state[app] = true;
+                
+               if (action.payload.app === 'Notepad'){
+                
+                const app = action.payload.app;
+                const content = action.payload.content;
+                
+                state[app] = {
+                    open: true,
+                    content 
+                }
+            }else {
+                const app = action.payload.app;
+                state[app] = true;
+            }
+
+           
         },
         closeApp : (state, action)=>{
-            const app = action.payload.app;
-            state[app] = false;
+
+            if (action.payload.app === 'Notepad'){
+                const app = action.payload.app;
+                const content = action.payload.content;
+                state[app] = {
+                    open: false,
+                    content
+                }
+            }else {
+                const app = action.payload.app;
+                state[app] = false;
+            }
         },
         addApp : (state, action)=>{
-            const app = action.payload.app;
-            state[app] = false;
+            if (action.payload.app === 'Notepad'){
+                const app = action.payload.app;
+                const content = action.payload.content;
+                state[app] = {
+                    open: false,
+                    content
+                }
+            }else {
+                const app = action.payload.app;
+                state[app] = false;
+            }
         }
     }
 });

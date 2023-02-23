@@ -15,7 +15,6 @@ const Desktop = () => {
 	const downloadedApps = useSelector(state => state.downloadedApps);
 	const dispatch = useDispatch();
 
-	console.log(downloadedApps);
 	const handleOpen = e => {
 		dispatch(
 			openApp({
@@ -51,7 +50,7 @@ const Desktop = () => {
 			<Terminal open={openedApps.terminal} title='Terminal' />
 			<AppStore open={openedApps.store} title='AppStore' />
 			<Paint open={openedApps.Paint} title='Paint' />
-			<Bloc open={openedApps.Notepad} title='Notepad' />
+			<Bloc open={openedApps.Notepad?.open} title='Notepad' />
 			<CalendarApp open={openedApps.Calendar} title='Calendar' />
 		</div>
 	);

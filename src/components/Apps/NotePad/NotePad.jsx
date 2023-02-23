@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import style from './NotePad.module.css';
 
-const NotePad = () => {
-	const [text, setText] = useState('Start typing...');
+const NotePad = ({ content }) => {
+	const [text, setText] = useState(content || 'Start typing...');
 	const [textStyle, setTextStyle] = useState('P');
+
+	console.log(content);
 
 	console.log(textStyle === 'P');
 

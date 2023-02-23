@@ -8,6 +8,8 @@ const Bloc = ({ open, title }) => {
 	const apps = useSelector(state => state.appsOpened);
 	const disaptach = useDispatch();
 
+	console.log(apps);
+
 	const close = () => {
 		disaptach(
 			closeApp({
@@ -29,7 +31,7 @@ const Bloc = ({ open, title }) => {
 						<img src='close.png' alt='' onClick={close} />
 						<span className={style.title}>{title}</span>
 					</div>
-					<NotePad />
+					<NotePad content={apps.Notepad.content} />
 				</div>
 			</Draggable>
 		)

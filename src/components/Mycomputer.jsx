@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Draggable from 'react-draggable';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeApp } from '../redux/appsSlice';
+import { closeApp, openApp } from '../redux/appsSlice';
 import style from './Mycomputer.module.css';
 
 const Mycomputer = ({ open, title }) => {
@@ -9,7 +9,7 @@ const Mycomputer = ({ open, title }) => {
 	const disaptach = useDispatch();
 	const fileSystem = useSelector(state => state.fileSystem);
 	const [currentFolder, setCurrentFolder] = useState(fileSystem.root.children);
-	const [lastPath, setLastPath] = useState();
+	const [currentPath, setCurrentPath] = useState('root/');
 
 	console.log(currentFolder);
 
@@ -33,32 +33,52 @@ const Mycomputer = ({ open, title }) => {
 						<img src='close.png' alt='' onClick={close} />
 						<span className={style.title}>{title}</span>
 					</div>
-
-					<div className={style.content}>
-						<button onClick={() => setCurrentFolder(fileSystem.root.children)}>
+					<div className={style.path}>
+						<button
+							onClick={() => {
+								setCurrentFolder(fileSystem.root.children);
+								setCurrentPath('root/');
+							}}
+						>
 							Go patras
 						</button>
+						<p>{currentPath}</p>
+					</div>
+					<div className={style.content}>
 						{currentFolder.map((file, index) => {
 							if (file.type === 'folder') {
 								return (
-									<button
+									<div
 										key={index}
 										onClick={() => {
 											setCurrentFolder(file.children);
+											setCurrentPath(currentPath + file.name + '/');
 										}}
+										className={style.folder}
 									>
 										<img src='folder.png' alt='' />
 										{file.name}
-									</button>
+									</div>
 								);
 							}
 
 							if (file.type === 'file') {
 								return (
-									<button key={index}>
+									<div
+										key={index}
+										className={style.folder}
+										onClick={() => {
+											disaptach(
+												openApp({
+													app: 'Notepad',
+													content: file.content
+												})
+											);
+										}}
+									>
 										<img src='file.png' alt='' />
 										{file.name}
-									</button>
+									</div>
 								);
 							}
 						})}

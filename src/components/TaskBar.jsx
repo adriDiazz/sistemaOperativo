@@ -12,6 +12,16 @@ const TaskBar = () => {
 			<img src='operating-system.png' alt='' />
 			<div className={style.apps}>
 				{openedAppsEntries.map(app => {
+					if (app[0] === 'Notepad') {
+						const [appName, isOpen] = app;
+						return (
+							isOpen.open && (
+								<div className={style.app} key={appName}>
+									<img src={`${appName}.png`} alt='' className={style.app} />
+								</div>
+							)
+						);
+					}
 					const [appName, isOpen] = app;
 					return (
 						isOpen && (
